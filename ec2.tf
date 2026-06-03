@@ -10,7 +10,7 @@ resource "aws_instance" "jenkins" {
     aws_security_group.jenkins.id
   ]
 
-  user_data = file("${path.module}/userdata/jenkins.sh")
+  user_data = file("${path.module}/jenkins.sh")
 
   tags = {
     Name = "jenkins-server"
@@ -29,7 +29,7 @@ resource "aws_instance" "minikube" {
     aws_security_group.minikube.id
   ]
 
-  user_data = file("${path.module}/userdata/minikube.sh")
+  user_data = file("${path.module}/minikube.sh")
 
   tags = {
     Name = "minikube-server"
