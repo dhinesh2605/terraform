@@ -7,7 +7,7 @@ resource "aws_security_group" "jenkins" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["27.7.235.197"]
+    cidr_blocks      = ["27.7.235.197/32"]
   }
 
   ingress {
@@ -36,7 +36,7 @@ resource "aws_security_group" "minikube" {
     to_port          = 22
     protocol         = "tcp"
     cidr_blocks      = [
-        "27.7.235.197",
+        "27.7.235.197/32",
         "10.0.1.0/24"
     ]
   }
@@ -46,7 +46,7 @@ resource "aws_security_group" "minikube" {
     to_port          = 6443
     protocol         = "tcp"
     cidr_blocks      = [
-        "27.7.235.197",
+        "27.7.235.197/32",
         "10.0.1.0/24"
     ]
   }
